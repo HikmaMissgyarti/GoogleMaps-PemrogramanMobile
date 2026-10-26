@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'halaman_topup.dart';
 import 'halaman_transfer.dart';
 import 'halaman_scan_qr.dart';
-import 'halaman_bayar.dart';
+import 'halaman_riwayat.dart';
 import 'halaman_pulsa.dart';
 import 'halaman_voucher_game.dart';
 import 'halaman_transportasi.dart';
@@ -12,6 +12,10 @@ import 'halaman_listrik.dart';
 import 'halaman_tv_kabel.dart';
 import 'halaman_streaming.dart';
 import 'halaman_belanja.dart';
+import 'halaman_donasi.dart';
+import 'halaman_asuransi.dart';
+import 'halaman_investasi.dart';
+import 'halaman_lainnya.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -157,7 +161,7 @@ class MenuPage extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const BayarPage(),
+                            builder: (context) => const RiwayatPage(),
                           ),
                         );
                       },
@@ -504,7 +508,166 @@ class MenuPage extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 25),
+              const SizedBox(height: 12),
+
+              // Baris ke-4
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DonasiPage(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFE8F1FF),
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Center(
+                              child: Icon(
+                                Icons.volunteer_activism,
+                                size: 28, // Ukuran diperbesar sedikit agar terlihat pas
+                                color: Color(0xFF1E88E5), // Warna ikon diubah jadi biru
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Donasi",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const AsuransiPage(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 220, 255, 240),
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.verified_user,
+                              size: 32,
+                              color: Colors.green,
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Asuransi",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const InvestasiPage(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFFFF3E0),
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.currency_exchange,
+                              size: 32,
+                              color: Color(0xFFE65100),
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Investasi",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LainnyaPage(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Container(
+                            width: 60,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 243, 240, 240),
+                              borderRadius: BorderRadius.circular(18),
+                            ),
+                            child: const Icon(
+                              Icons.apps,
+                              size: 32,
+                              color: Color.from(alpha: 0.933, red: 0.29, green: 0.294, blue: 0.29),
+                            ),
+                          ),
+                          const SizedBox(height: 6),
+                          const Text(
+                            "Lainnya",
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 12), // Jarak rapat antar baris
 
               ElevatedButton(
                 onPressed: () {

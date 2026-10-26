@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class BayarPage extends StatelessWidget {
-  const BayarPage({super.key});
+class InvestasiPage extends StatelessWidget {
+  const InvestasiPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Riwayat"),
+        title: Text("Investasi"),
       ),
       body: Center(
-        child: Text("Halaman Riwayat"),
+        child: Text("Halaman Investasi"),
       ),
     );
   }
